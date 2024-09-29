@@ -34,7 +34,7 @@ public class CompetitionService {
     }
 
     public void insertNewCompetition(Competition competition) {
-        System.out.println(competition);
+
         competitionRepository.findCompetitionByName(competition.getName())
                 .ifPresent(existingCompetition -> {
                     throw new IllegalStateException("Competition with this name already exists!");
